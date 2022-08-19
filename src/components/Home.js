@@ -1,7 +1,6 @@
 export default function Home() {
   return (
     <div>
-      <h1>SHRED IT</h1>
       <p>Write a review about your favorite skate shops </p>
       <img
         style={{
