@@ -13,6 +13,13 @@ export default function ReviewFeed() {
     };
     info();
   }, []);
+
+  const remove = async (e) => {
+    await axios.delete(`http://localhost:3001/api/reviews/${e}`);
+    //setinfo(info);
+    window.location.reload(false);
+  };
+
   return (
     <div>
       <h1>Review Feed</h1>
@@ -29,7 +36,7 @@ export default function ReviewFeed() {
                 <Button basic color="green">
                   Update
                 </Button>
-                <Button basic color="red">
+                <Button onClick={() => remove(r.id)} basic color="red">
                   Delete
                 </Button>
               </div>
